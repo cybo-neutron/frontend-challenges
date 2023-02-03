@@ -8,7 +8,7 @@ function Navbar() {
     setToggleMenu((prev) => !prev);
   }
   return (
-    <div className="relative flex flex-row items-center px-4 bg-orange-100 md:px-0 ">
+    <div className="relative flex flex-row items-center px-4 md:px-0  border-b-2">
       <div className="flex gap-x-4">
         {/* Hamburger Menu  */}
         <div className="md:hidden justify-self-start">
@@ -19,7 +19,7 @@ function Navbar() {
 
         {/* Logo  */}
         <div>
-          <img src="images/logo.svg" alt="sneakers" />
+          <img src="images/logo.svg" alt="sneakers" className="md:h-4" />
         </div>
       </div>
 
@@ -27,9 +27,9 @@ function Navbar() {
       <div
         className={
           toggleMenu
-            ? "flex absolute top-0 left-0 flex-col w-8/12 min-h-screen pl-5 font-bold bg-slate-200 gap-y-5 "
+            ? "flex absolute top-0 left-0 flex-col w-8/12 min-h-screen pl-5 font-bold bg-slate-200 gap-y-5 z-10"
             : "hidden" +
-              "  md:bg-transparent md:relative md:flex md:flex-row md:min-h-full md:gap-x-2 md:font-normal md:text-gray-500 md:ml-4"
+              "  md:bg-transparent md:relative md:flex md:flex-row md:min-h-full md:gap-x-2 md:font-normal md:text-gray-500 md:ml-4 md:text-sm"
         }
       >
         <button
@@ -48,12 +48,15 @@ function Navbar() {
       <div className="flex ml-auto gap-x-4">
         {/* Cart  */}
         <button type="button">
-          <img src="images/icon-cart.svg" alt="" />
+          <img src="images/icon-cart.svg" alt="" className="" />
         </button>
 
         {/* Avatar  */}
-        <button type="button h-5">
-          <img src="images/image-avatar.png" alt="" className="h-10" />
+        <button
+          type="button"
+          className="bg-orange-500 rounded-full border-2 hover:border-orange-500"
+        >
+          <img src="images/image-avatar.png" alt="Avatar" className="h-10" />
         </button>
       </div>
     </div>
